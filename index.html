@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Name | MERN & Laravel Developer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#6366f1',
+            dark: '#0f172a',
+            card: '#1e293b'
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    html { scroll-behavior: smooth; }
+    .gradient-text {
+      background: linear-gradient(90deg, #6366f1, #a855f7, #ec4899);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .glow { box-shadow: 0 0 30px rgba(99,102,241,0.4); }
+    .card-hover { transition: all 0.3s ease; }
+    .card-hover:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(99,102,241,0.3); }
+  </style>
+</head>
+<body class="bg-dark text-white font-sans">
+
+<!-- ============ NAVBAR ============ -->
+<nav class="fixed top-0 w-full z-50 bg-dark/80 backdrop-blur-lg border-b border-white/10">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <a href="#" class="text-2xl font-extrabold gradient-text">Portfolio.</a>
+    <ul class="hidden md:flex gap-8 text-sm font-medium">
+      <li><a href="#home" class="hover:text-primary transition">Home</a></li>
+      <li><a href="#about" class="hover:text-primary transition">About</a></li>
+      <li><a href="#skills" class="hover:text-primary transition">Skills</a></li>
+      <li><a href="#projects" class="hover:text-primary transition">Projects</a></li>
+      <li><a href="#contact" class="hover:text-primary transition">Contact</a></li>
+    </ul>
+    <button id="menuBtn" class="md:hidden text-2xl"><i class="fa-solid fa-bars"></i></button>
+  </div>
+  <div id="mobileMenu" class="hidden md:hidden px-6 pb-4">
+    <a href="#home" class="block py-2 hover:text-primary">Home</a>
+    <a href="#about" class="block py-2 hover:text-primary">About</a>
+    <a href="#skills" class="block py-2 hover:text-primary">Skills</a>
+    <a href="#projects" class="block py-2 hover:text-primary">Projects</a>
+    <a href="#contact" class="block py-2 hover:text-primary">Contact</a>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<section id="home" class="min-h-screen flex items-center pt-24 px-6">
+  <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+    <div>
+      <p class="text-primary font-semibold mb-3">👋 Hello, I'm</p>
+      <h1 class="text-5xl md:text-6xl font-extrabold mb-4 leading-tight">
+        Your <span class="gradient-text">Name</span>
+      </h1>
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-300 mb-6">
+        <span id="typed"></span>
+      </h2>
+      <p class="text-gray-400 mb-8 max-w-lg">
+        Passionate Full Stack Developer specializing in MERN Stack & Laravel.
+        I build fast, scalable & beautiful web applications.
+      </p>
+      <div class="flex gap-4 flex-wrap">
+        <a href="#contact" class="px-6 py-3 bg-primary rounded-lg font-semibold hover:bg-indigo-600 transition glow">
+          Hire Me <i class="fa-solid fa-arrow-right ml-1"></i>
+        </a>
+        <a href="resume.pdf" download class="px-6 py-3 border border-primary text-primary rounded-lg font-semibold hover:bg-primary hover:text-white transition">
+          Download CV <i class="fa-solid fa-download ml-1"></i>
+        </a>
+      </div>
+      <div class="flex gap-4 mt-8 text-2xl text-gray-400">
+        <a href="https://github.com/yourusername" target="_blank" class="hover:text-primary"><i class="fa-brands fa-github"></i></a>
+        <a href="https://linkedin.com/in/yourusername" target="_blank" class="hover:text-primary"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://twitter.com/yourusername" target="_blank" class="hover:text-primary"><i class="fa-brands fa-twitter"></i></a>
+        <a href="mailto:you@example.com" class="hover:text-primary"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </div>
+    <div class="flex justify-center">
+      <div class="relative">
+        <div class="absolute inset-0 bg-gradient-to-tr from-primary to-pink-500 rounded-full blur-3xl opacity-40"></div>
+        <img src="https://ui-avatars.com/api/?name=Your+Name&size=400&background=6366f1&color=fff"
+             alt="Profile" class="relative w-72 h-72 md:w-96 md:h-96 rounded-full border-4 border-primary object-cover"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about" class="py-24 px-6 bg-card/30">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-4xl font-extrabold text-center mb-4">About <span class="gradient-text">Me</span></h2>
+    <p class="text-center text-gray-400 mb-12 max-w-2xl mx-auto">Ek passionate developer jo clean code aur modern UI/UX me believe karta hai.</p>
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <p class="text-gray-300 leading-relaxed mb-4">
+          I'm a Full Stack Web Developer with <strong class="text-primary">3+ years</strong> of experience
+          building high-performance web apps using <strong class="text-primary">MERN Stack</strong>
+          (MongoDB, Express, React, Node.js) and <strong class="text-primary">Laravel</strong>.
+        </p>
+        <p class="text-gray-300 leading-relaxed mb-6">
+          I love turning complex problems into simple, beautiful & intuitive solutions.
+          Currently available for freelance & full-time opportunities.
+        </p>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="bg-card p-4 rounded-lg border border-white/10">
+            <p class="text-3xl font-bold text-primary">50+</p>
+            <p class="text-sm text-gray-400">Projects Completed</p>
+          </div>
+          <div class="bg-card p-4 rounded-lg border border-white/10">
+            <p class="text-3xl font-bold text-primary">30+</p>
+            <p class="text-sm text-gray-400">Happy Clients</p>
+          </div>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-4">
+        <div class="bg-card p-6 rounded-xl border border-white/10 card-hover">
+          <i class="fa-solid fa-code text-3xl text-primary mb-3"></i>
+          <h3 class="font-bold mb-1">Clean Code</h3>
+          <p class="text-sm text-gray-400">Maintainable & scalable</p>
+        </div>
+        <div class="bg-card p-6 rounded-xl border border-white/10 card-hover">
+          <i class="fa-solid fa-mobile-screen text-3xl text-primary mb-3"></i>
+          <h3 class="font-bold mb-1">Responsive</h3>
+          <p class="text-sm text-gray-400">Mobile-first designs</p>
+        </div>
+        <div class="bg-card p-6 rounded-xl border border-white/10 card-hover">
+          <i class="fa-solid fa-rocket text-3xl text-primary mb-3"></i>
+          <h3 class="font-bold mb-1">Fast</h3>
+          <p class="text-sm text-gray-400">Optimized performance</p>
+        </div>
+        <div class="bg-card p-6 rounded-xl border border-white/10 card-hover">
+          <i class="fa-solid fa-shield-halved text-3xl text-primary mb-3"></i>
+          <h3 class="font-bold mb-1">Secure</h3>
+          <p class="text-sm text-gray-400">Best practices</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SKILLS ============ -->
+<section id="skills" class="py-24 px-6">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-4xl font-extrabold text-center mb-4">My <span class="gradient-text">Skills</span></h2>
+    <p class="text-center text-gray-400 mb-12">Technologies I work with daily.</p>
+
+    <h3 class="text-xl font-bold mb-4 text-primary">🎨 Frontend</h3>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+      <div class="bg-card p-5 rounded-xl border border-white/10 text-center card-hover">
+        <i class="fa-brands fa-react text-4xl text-cyan-400 mb-2"></i>
+        <p class="font-semibold">React.js</p>
+      </div>
+      <div class="bg-card p-5 rounded-xl border border-white/10 text-center card-hover">
+        <i class="fa-brands fa-js text-4xl text-yellow-400 mb-2"></i>
+        <p class="font-semibold">JavaScript</p>
+      </div>
+      <div class="bg-card p-5 rounded-xl border border-white/10 text-center card-hover">
+        <i class="fa-brands fa-css3-alt text-4xl text-blue-400 mb-2"></i>
+        <p class="font-semibold">Tailwind CSS</p>
+      </div>
+      <div class="bg-card p-5 rounded-xl border border-white/10 text-center card-hover">
+        <i class="fa-brands fa-bootstrap text-4xl text-purple-400 mb-2"></i>
+        <p class="font-semibold">Bootstrap</p>
+      </div>
+    </div>
+
+    <h3 class="text-xl font-bold mb-4 text-primary">⚙️ Backend</h3>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+      <div class="bg-card p-5 rounded-xl border border-white/10 text-center card-hover">
+        <i class="fa-brands fa-node-js text-4xl text-green-500 mb-2"></i>
+        <p class="font-semibold">Node.js</p>
+      </div>
+      <div class="bg-card p-5 rounded-xl border border-white/10 text-center card-hover">
+        <i class="fa-brands fa-laravel text-4xl text-red-500 mb-2"></i>
+        <p class="font-semibold">Laravel</p>
+      </div>
+      <div class="bg-card p-5 rounded-xl border border-white/10 text-center card-hover">
+        <i class="fa-solid fa-database text-4xl text-emerald-400 mb-2"></i>
+        <p class="font-semibold">MongoDB</p>
+      </div>
+      <div class="bg-card p-5 rounded-xl border border-white/10 text-center card-hover">
+        <i class="fa-solid fa-server text-4xl text-orange-400 mb-2"></i>
+        <p class="font-semibold">MySQL</p>
+      </div>
+    </div>
+
+    <h3 class="text-xl font-bold mb-4 text-primary">🛠️ Tools</h3>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="bg-card p-5 rounded-xl border border-white/10 text-center card-hover">
+        <i class="fa-brands fa-git-alt text-4xl text-orange-500 mb-2"></i>
+        <p class="font-semibold">Git</p>
+      </div>
+      <div class="bg-card p-5 rounded-xl border border-white/10 text-center card-hover">
+        <i class="fa-brands fa-github text-4xl mb-2"></i>
+        <p class="font-semibold">GitHub</p>
+      </div>
+      <div class="bg-card p-5 rounded-xl border border-white/10 text-center card-hover">
+        <i class="fa-solid fa-code text-4xl text-blue-400 mb-2"></i>
+        <p class="font-semibold">VS Code</p>
+      </div>
+      <div class="bg-card p-5 rounded-xl border border-white/10 text-center card-hover">
+        <i class="fa-brands fa-figma text-4xl text-pink-400 mb-2"></i>
+        <p class="font-semibold">Figma</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section id="projects" class="py-24 px-6 bg-card/30">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-4xl font-extrabold text-center mb-4">My <span class="gradient-text">Projects</span></h2>
+    <p class="text-center text-gray-400 mb-12">Some of my recent work.</p>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Project Card 1 -->
+      <div class="bg-card rounded-xl overflow-hidden border border-white/10 card-hover">
+        <img src="https://images.unsplash.com/photo-1557821552-17105176677c?w=600" class="w-full h-48 object-cover"/>
+        <div class="p-6">
+          <h3 class="font-bold text-xl mb-2">E-Commerce App</h3>
+          <p class="text-gray-400 text-sm mb-4">MERN Stack e-commerce with cart, payment & admin panel.</p>
+          <div class="flex gap-2 mb-4 flex-wrap">
+            <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">React</span>
+            <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Node</span>
+            <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">MongoDB</span>
+          </div>
+          <div class="flex gap-3">
+            <a href="#" class="text-primary hover:underline text-sm"><i class="fa-solid fa-link"></i> Live</a>
+            <a href="#" class="text-primary hover:underline text-sm"><i class="fa-brands fa-github"></i> Code</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Card 2 -->
+      <div class="bg-card rounded-xl overflow-hidden border border-white/10 card-hover">
+        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600" class="w-full h-48 object-cover"/>
+        <div class="p-6">
+          <h3 class="font-bold text-xl mb-2">Laravel CRM</h3>
+          <p class="text-gray-400 text-sm mb-4">Customer relationship management with roles & analytics.</p>
+          <div class="flex gap-2 mb-4 flex-wrap">
+            <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Laravel</span>
+            <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">MySQL</span>
+            <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Bootstrap</span>
+          </div>
+          <div class="flex gap-3">
+            <a href="#" class="text-primary hover:underline text-sm"><i class="fa-solid fa-link"></i> Live</a>
+            <a href="#" class="text-primary hover:underline text-sm"><i class="fa-brands fa-github"></i> Code</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Card 3 -->
+      <div class="bg-card rounded-xl overflow-hidden border border-white/10 card-hover">
+        <img src="https://images.unsplash.com/photo-1618477388954-7852f32655ec?w=600" class="w-full h-48 object-cover"/>
+        <div class="p-6">
+          <h3 class="font-bold text-xl mb-2">Task Manager</h3>
+          <p class="text-gray-400 text-sm mb-4">Real-time task management app with team collaboration.</p>
+          <div class="flex gap-2 mb-4 flex-wrap">
+            <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">React</span>
+            <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Socket.io</span>
+            <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Tailwind</span>
+          </div>
+          <div class="flex gap-3">
+            <a href="#" class="text-primary hover:underline text-sm"><i class="fa-solid fa-link"></i> Live</a>
+            <a href="#" class="text-primary hover:underline text-sm"><i class="fa-brands fa-github"></i> Code</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact" class="py-24 px-6">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-4xl font-extrabold text-center mb-4">Get In <span class="gradient-text">Touch</span></h2>
+    <p class="text-center text-gray-400 mb-12">Have a project in mind? Let's talk!</p>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      <div>
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
+            <i class="fa-solid fa-envelope text-primary text-xl"></i>
+          </div>
+          <div>
+            <p class="text-sm text-gray-400">Email</p>
+            <p class="font-semibold">you@example.com</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
+            <i class="fa-solid fa-phone text-primary text-xl"></i>
+          </div>
+          <div>
+            <p class="text-sm text-gray-400">Phone</p>
+            <p class="font-semibold">+91 98765 43210</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
+            <i class="fa-solid fa-location-dot text-primary text-xl"></i>
+          </div>
+          <div>
+            <p class="text-sm text-gray-400">Location</p>
+            <p class="font-semibold">India</p>
+          </div>
+        </div>
+      </div>
+
+      <form id="contactForm" class="space-y-4">
+        <input type="text" placeholder="Your Name" required
+               class="w-full bg-card border border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-primary"/>
+        <input type="email" placeholder="Your Email" required
+               class="w-full bg-card border border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-primary"/>
+        <textarea rows="4" placeholder="Your Message" required
+                  class="w-full bg-card border border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-primary"></textarea>
+        <button type="submit"
+                class="w-full bg-primary py-3 rounded-lg font-semibold hover:bg-indigo-600 transition glow">
+          Send Message <i class="fa-solid fa-paper-plane ml-1"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="border-t border-white/10 py-8 text-center text-gray-400">
+  <p>© 2025 Your Name. Built with ❤️ using Tailwind CSS</p>
+</footer>
+
+<script>
+  // Mobile menu toggle
+  document.getElementById('menuBtn').addEventListener('click', () => {
+    document.getElementById('mobileMenu').classList.toggle('hidden');
+  });
+
+  // Typing effect
+  const texts = ["MERN Stack Developer", "Laravel Developer", "Full Stack Engineer", "UI/UX Enthusiast"];
+  let i = 0, j = 0, current = "", isDeleting = false;
+  function type() {
+    const el = document.getElementById('typed');
+    if (!el) return;
+    current = texts[i];
+    el.textContent = isDeleting ? current.substring(0, j--) : current.substring(0, j++);
+    if (!isDeleting && j === current.length + 1) { isDeleting = true; setTimeout(type, 1500); return; }
+    if (isDeleting && j === 0) { isDeleting = false; i = (i + 1) % texts.length; }
+    setTimeout(type, isDeleting ? 50 : 100);
+  }
+  type();
+
+  // Contact form
+  document.getElementById('contactForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    alert('✅ Message sent! (Connect to backend/Formspree to make it real)');
+    e.target.reset();
+  });
+</script>
+</body>
+</html>
